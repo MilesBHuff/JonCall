@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang=en-us>
+	<head>
+		<base url= target=_self>
+		<link rel=icon       type=image/x-icon href=favicon.ico>
+		<link rel=stylesheet type=text/css     href=style.css>
+		<meta charset=UTF-8>
+		<title>JonCall</title>
+	</head>
+	<body>
+		<div class="grid gap-full pad-full">
+			<h1 class=card>JonCall</h1>
+			<form class="card grid">
+				<h2     style="grid-area:1/1/span 1/span 2">Add new entry</h2>
+				<span   style="grid-area:2/1;text-align:right">Name:&nbsp;</span>
+				<input  style="grid-area:2/2" type=text name=fullname>
+				<span   style="grid-area:3/1;text-align:right">Phone:&nbsp;</span>
+				<input  style="grid-area:3/2" type=text name=phone>
+				<span   style="grid-area:4/1;text-align:right">Reason:&nbsp;</span>
+				<input  style="grid-area:4/2" type=text name=reason>
+				<button style="grid-area:5/1">Submit</button>
+			</form>
+			<div class=card>
+				<h2>Yet-to-call</h2>
+				<div id=notCalled class="grid spreadsheet"></div>
+			</div>
+			<div class=card>
+				<h2>Already called</h2>
+				<div id=yesCalled class="grid spreadsheet"></div>
+			</div>
+		</div>
+	</body>
+</html>
