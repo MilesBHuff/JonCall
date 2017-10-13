@@ -56,7 +56,7 @@
 
 /*   D E F A U L T S   */
 * {
-	background: var(--bg-default)00;
+	background: var(--bg-default)0;
 	border: 0px solid var(--fg-default);
 	border-collapse: collapse;
 	border-spacing: 0px;
@@ -184,6 +184,11 @@ textarea {
 }
 u {
 	text-decoration: underline;
+}
+
+/*   C O M P A T I B I L I T Y   */
+.webkit-compat {
+	background:var(--light-black)0;
 }
 
 /*   G R I D   */
