@@ -40,17 +40,18 @@
 	--font-sans:  sans-serif;
 	--font-serif: serif;
 	--font-mono:  monospace;
-	--indent:	        2em;
-	--line-height:      1.5;
-	--pad-double:       2em;
-	--pad-double-neg:  -2em;
-	--pad-full:         1em;
-	--pad-full-neg:    -1em;
-	--pad-half:	        0.5em;
-	--pad-half-neg:	   -0.5em;
-	--pad-quarter:      0.25em;
-	--pad-quarter-neg: -0.25em;
-	--shadow:	 #0004;
+	--indent:	     2em;
+	--line-height:   1.5;
+	--pad-full:      1em;
+	--pad-full-neg:    calc(var(--pad-full) * -1);
+	--pad-half:	       calc(var(--pad-full) /  2);
+	--pad-half-neg:	   calc(var(--pad-full) / -2);
+	--pad-quarter:     calc(var(--pad-full) /  4);
+	--pad-quarter-neg: calc(var(--pad-full) / -4);
+	--pad-double:      calc(var(--pad-full) *  2);
+	--pad-double-neg:  calc(var(--pad-full) * -2);
+	--shadow-color:	 #0004;
+	--shadow-width:  2px;
 }
 
 /*   D E F A U L T S   */
@@ -98,7 +99,7 @@ a:visited:hover {
 	color: var(--bg-default);
 }
 a:active {
-	box-shadow: 0px 0px 2px 1px var(--shadow) inset;
+	box-shadow: 0px 0px var(--shadow-width) calc(var(--shadow-width) / 2) var(--shadow-color) inset;
 }
 b {
 	font-weight: bold;
@@ -106,7 +107,7 @@ b {
 body {
 	background: var(--bg-shade);
 	bottom: 0;
-	box-shadow: 0px 0px 4px 3px var(--shadow) inset;
+	box-shadow: 0px 0px calc(var(--shadow-width) * 2) calc(calc(var(--shadow-width) * 2) / 2) var(--shadow-color) inset;
 	left: 0;
 	position: absolute;
 	right: 0;
@@ -116,10 +117,9 @@ body {
 button, .button {
 	background: var(--fg-default);
 	border-radius: var(--pad-full);
-	box-shadow: 0px 0px 2px 1px var(--shadow);
+	box-shadow: 0px 0px var(--shadow-width) calc(var(--shadow-width) / 2) var(--shadow-color);
 	color: var(--bg-default);
-	margin: 0px 0px var(--pad-quarter) 0px;
-	overflow: hidden;
+	margin: var(--shadow-width) var(--shadow-width) calc(var(--shadow-width) + var(--pad-quarter)) var(--shadow-width); /* TODO: Should be var(--shadow-width) all around. */
 	padding: var(--pad-quarter) var(--pad-half);
 }
 button:hover, .button:hover {
@@ -127,7 +127,7 @@ button:hover, .button:hover {
 	color: var(--bg-default);
 }
 button:active, .button:active {
-	box-shadow: 0px 0px 2px 1px var(--shadow) inset;
+	box-shadow: 0px 0px var(--shadow-width) calc(var(--shadow-width) / 2) var(--shadow-color) inset;
 }
 h1 {
 	font-size: 150%;
@@ -152,15 +152,15 @@ i {
 input {
 	background: var(--bg-shade);
 	border-radius: var(--pad-full);
-	box-shadow: 0px 0px 2px 1px var(--shadow) inset;
-	margin: var(--pad-quarter-neg) 0px var(--pad-half) 0px;
+	box-shadow: 0px 0px var(--shadow-width) calc(var(--shadow-width) / 2) var(--shadow-color) inset;
+	margin: var(--pad-quarter-neg) 0px 0px 0px;
 	padding: var(--pad-quarter) var(--pad-half);
 }
 s {
 	text-decoration: line-through;
 }
 select {
-	box-shadow: 0px 0px 2px 1px var(--shadow);
+	box-shadow: 0px 0px var(--shadow-width) calc(var(--shadow-width) / 2) var(--shadow-color);
 }
 small {
 	font-size: 75%;
@@ -168,9 +168,9 @@ small {
 textarea {
 	background: var(--bg-shade);
 	border-radius: var(--pad-full);
-	box-shadow: 0px 0px 2px 1px var(--shadow) inset;
+	box-shadow: 0px 0px var(--shadow-width) calc(var(--shadow-width) / 2) var(--shadow-color) inset;
 /*	font: 100% var(--font-mono); */
-	margin: var(--pad-quarter-neg) 0px var(--pad-half) 0px;
+	margin: var(--pad-quarter-neg) 0px 0px 0px;
 	padding: var(--pad-quarter) var(--pad-half);
 }
 u {
@@ -198,12 +198,15 @@ u {
 }
 .gap-quarter {
 	grid-gap: var(--pad-quarter) ! important;
+	margin: var(--pad-quarter-neg);
 }
 .gap-half {
 	grid-gap: var(--pad-half) ! important;
+	margin: var(--pad-half-neg);
 }
 .gap-full {
 	grid-gap: var(--pad-full) ! important;
+	margin: var(--pad-full-neg);
 }
 
 /*   P A D D I N G   */
@@ -274,18 +277,18 @@ u {
 .card {
 	background: var(--bg-default);
 	border-radius: var(--pad-full);
-	box-shadow: 0px 0px 2px 1px var(--shadow);
-	margin: 2px;
+	box-shadow: 0px 0px var(--shadow-width) calc(var(--shadow-width) / 2) var(--shadow-color);
+	margin: var(--shadow-width);
 	overflow: hidden !important;
 	padding: var(--pad-quarter) var(--pad-half);
 }
 .card img {
-	box-shadow: 0px 0px 2px 1px var(--shadow);
-	margin: 2px;
+	box-shadow: 0px 0px var(--shadow-width) calc(var(--shadow-width) / 2) var(--shadow-color);
+	margin: var(--shadow-width);
 }
 .card canvas {
-	box-shadow: 0px 0px 2px 1px var(--shadow);
-	margin: 2px;
+	box-shadow: 0px 0px var(--shadow-width) calc(var(--shadow-width) / 2) var(--shadow-color);
+	margin: var(--shadow-width);
 }
 .card h2 {
 	background: var(--fg-default);

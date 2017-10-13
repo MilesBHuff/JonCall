@@ -1,26 +1,40 @@
 <!doctype html>
 <html lang=en-us>
 	<head>
-		<link rel=icon       type=image/x-icon href=favicon.ico>
-		<link rel=stylesheet type=text/css     href=style.css>
+		<link rel=icon       type=image/x-icon    href=favicon.ico>
+		<link rel=stylesheet type=text/css        href=style.css>
 		<meta charset=UTF-8>
 		<title>JonCall</title>
+		<script              type=text/javascript href=script.js></script>
 	</head>
-	<body>
+	<body onload=main()>
 		<div class="grid gap-half pad-full">
-			<h1 class=card>JonCall</h1>
-			<form class="card grid" id=frmEntry>
+			<h1 class=card>JonCall<span style=float:right;font-size:initial>
+				<button style=margin-bottom:0px>View</button>
+				<button style=margin-bottom:0px>Edit</button>
+			</span></h1>
+			<form class="card grid gap-half" id=frmEntry>
 				<h2                     style="grid-area:1/1/span 1/span 2">Add new entry</h2>
-				<small class=mar-bottom style="grid-area:2/1/span 1/span 2;color:var(--dark-red)">'*' indicates required fields.</small>
-				<label    form=frmEntry style="grid-area:3/1;text-align:right"          for=txtFullName>Name:&nbsp;</label>
+				<small                  style="grid-area:2/1/span 1/span 2;color:var(--dark-red);margin-top:var(--pad-half-neg)">'*' indicates required fields.</small>
+				<label    form=frmEntry style="grid-area:3/1;text-align:right"          for=txtFullName>Name:</label>
 				<input    form=frmEntry style="grid-area:3/2" type=text name=fullname    id=txtFullName placeholder="…" autofocus>
-				<label    form=frmEntry style="grid-area:4/1;text-align:right"          for=txtPhone><span style=color:var(--dark-red)>*Phone</span>:&nbsp;</label>
+				<label    form=frmEntry style="grid-area:4/1;text-align:right"          for=txtPhone><span style=color:var(--dark-red)>*Phone:</span></label>
 				<input    form=frmEntry style="grid-area:4/2" type=tel  name=phone       id=txtPhone    placeholder="X-XXX-XXX-XXXX" required>
-				<label    form=frmEntry style="grid-area:5/1;text-align:right"          for=txtReason>Reason:&nbsp;</label>
+				<label    form=frmEntry style="grid-area:5/1;text-align:right"          for=txtReason>Reason:</label>
 				<textarea form=frmEntry style="grid-area:5/2" type=text name=description id=txtReason   placeholder="…"></textarea>
 				<div                    style="grid-area:6/1/span 1/span 2">
 					<input form=frmEntry class=button type=submit name=submit value=Submit>
 					<input form=frmEntry class=button type=reset  name=reset  value=Reset>
+				</div>
+			</form>
+			<form class="card grid gap-half" id=frmUpload>
+				<h2                     style="grid-area:1/1/span 1/span 2">Merge .csv</h2>
+				<small                  style="grid-area:2/1/span 1/span 2;color:var(--dark-red);margin-top:var(--pad-half-neg)">'*' indicates required fields.</small>
+				<label    form=frmUpload style="grid-area:3/1;text-align:right"          for=txtFullName><span style=color:var(--dark-red)>*File:</span></label>
+				<input    form=frmUpload style="grid-area:3/2" type=file name=fullname    id=filCsv autofocus>
+				<div                    style="grid-area:4/1/span 1/span 2">
+					<input form=frmUpload class=button type=submit name=submit value=Submit>
+					<input form=frmUpload class=button type=reset  name=reset  value=Reset>
 				</div>
 			</form>
 			<div class=card>
