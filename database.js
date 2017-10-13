@@ -33,6 +33,14 @@ function btnEdit() {
 	document.getElementById("frmUpload"   ).style.display = "inline-grid";
 } //function
 
+// btnLogout
+// =============================================================================
+/** Logs the user out. **/
+function btnLogout() {
+	//TODO
+	location.replace("login.html");
+} //function
+
 // btnView
 // =============================================================================
 /** Hides the edit forms and shows the tables. **/
