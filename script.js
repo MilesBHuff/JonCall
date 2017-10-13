@@ -24,6 +24,9 @@ function btnEdit() {
 		params.set("edit", 1);
 		location.replace(url);
 	} //fi
+	if(document.title != "JonCall - Edit") {
+		document.title = "JonCall - Edit"
+	} //fi
 	document.getElementById("divNotCalled").style.display = "none";
 	document.getElementById("divYesCalled").style.display = "none";
 	document.getElementById("frmEntry"    ).style.display = "inline-grid";
@@ -37,6 +40,9 @@ function btnView() {
 	if(params.get("edit") != 0) {
 		params.set("edit", 0);
 		location.replace(url);
+	} //fi
+	if(document.title != "JonCall - View") {
+		document.title = "JonCall - View"
 	} //fi
 	document.getElementById("frmEntry"    ).style.display = "none";
 	document.getElementById("frmUpload"   ).style.display = "none";
