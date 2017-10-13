@@ -5,7 +5,7 @@
 		<link rel=stylesheet type=text/css        href=style.css>
 		<meta charset=UTF-8>
 		<title>JonCall</title>
-		<script              type=text/javascript href=script.js></script>
+		<script              type=text/javascript src=script.js></script>
 	</head>
 	<body onload=main()>
 		<div class="grid gap-half pad-full">
@@ -14,7 +14,7 @@
 				<button style=margin-bottom:0px onclick=btnView()>View</button>
 				<button style=margin-bottom:0px onclick=btnEdit()>Edit</button>
 			</span></h1>
-			<form class="card grid gap-half" id=frmEntry>
+			<form class="card grid gap-half" id=frmEntry style=display:none>
 				<h2                     style="grid-area:1/1/span 1/span 2">Add new entry</h2>
 				<small                  style="grid-area:2/1/span 1/span 2;color:var(--dark-red);margin-top:var(--pad-half-neg)">'*' indicates required fields.</small>
 				<label    form=frmEntry style="grid-area:3/1;text-align:right"          for=txtFullName>Name:</label>
@@ -28,7 +28,7 @@
 					<input form=frmEntry class=button type=reset  name=reset  value=Reset>
 				</div>
 			</form>
-			<form class="card grid gap-half" id=frmUpload>
+			<form class="card grid gap-half" id=frmUpload style=display:none>
 				<h2                     style="grid-area:1/1/span 1/span 2">Merge .csv</h2>
 				<small                  style="grid-area:2/1/span 1/span 2;color:var(--dark-red);margin-top:var(--pad-half-neg)">'*' indicates required fields.</small>
 				<label    form=frmUpload style="grid-area:3/1;text-align:right"          for=txtFullName><span style=color:var(--dark-red)>*File:</span></label>
@@ -38,11 +38,11 @@
 					<input form=frmUpload class=button type=reset  name=reset  value=Reset>
 				</div>
 			</form>
-			<div class=card>
+			<div class=card id=divNotCalled>
 				<h2>Yet-to-call</h2>
 				<div class="grid spreadsheet" id=notCalled></div>
 			</div>
-			<div class=card>
+			<div class=card id=divYesCalled>
 				<h2>Already called</h2>
 				<div class="grid spreadsheet" id=yesCalled></div>
 			</div>
