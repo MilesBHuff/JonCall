@@ -83,7 +83,7 @@ body {
 	top: 0;
 	z-index: -1;
 }
-button {
+button, .button {
 	background: var(--fg-default);
 	border-radius: var(--pad-full);
 	box-shadow: 0px 0px 2px 1px var(--shadow);
@@ -92,11 +92,11 @@ button {
 	overflow: hidden;
 	padding: var(--pad-quarter) var(--pad-half);
 }
-button:hover {
+button:hover, .button:hover {
 	background: var(--fg-link);
 	color: var(--bg-default);
 }
-button:active {
+button:active, .button:active {
 	box-shadow: 0px 0px 2px 1px var(--shadow) inset;
 }
 h1 {
@@ -131,6 +131,9 @@ s {
 }
 select {
 	box-shadow: 0px 0px 2px 1px var(--shadow);
+}
+small {
+	font-size: 75%;
 }
 textarea {
 	background: var(--bg-dark);
