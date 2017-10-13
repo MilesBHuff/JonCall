@@ -10,16 +10,16 @@
 	--font-sans:  sans-serif;
 	--font-serif: serif;
 	--font-mono:  monospace;
-	--indent:	  2em;
+	--indent:	   2em;
 	--line-height: 1.5;
-	--pad-double: 32px;
-	--pad-double-neg: -32px;
-	--pad-full:   16px;
-	--pad-full-neg:   -16px;
-	--pad-half:	   8px;
-	--pad-half-neg:	   -8px;
-	--pad-quarter: 4px;
-	--pad-quarter-neg: -4px;
+	--pad-double:  2em;
+	--pad-double-neg:  -2em;
+	--pad-full:    1em;
+	--pad-full-neg:    -1em;
+	--pad-half:	   0.5em;
+	--pad-half-neg:	   -0.5em;
+	--pad-quarter: 0.25em;
+	--pad-quarter-neg: -0.25em;
 	--shadow:	 #0004;
 }
 
@@ -88,9 +88,9 @@ button {
 	border-radius: var(--pad-full);
 	box-shadow: 0px 0px 2px 1px var(--shadow);
 	color: var(--bg-default);
+	margin: 0px 0px var(--pad-quarter) 0px;
 	overflow: hidden;
 	padding: var(--pad-quarter) var(--pad-half);
-	margin: var(--pad-quarter) 0px;
 }
 button:hover {
 	background: var(--fg-link);
@@ -120,7 +120,11 @@ i {
 	font-style: italic;
 }
 input {
+	background: var(--bg-dark);
+	border-radius: var(--pad-full);
 	box-shadow: 0px 0px 2px 1px var(--shadow) inset;
+	margin: var(--pad-quarter-neg) 0px var(--pad-half) 0px;
+	padding: var(--pad-quarter) var(--pad-half);
 }
 s {
 	text-decoration: line-through;
@@ -129,8 +133,12 @@ select {
 	box-shadow: 0px 0px 2px 1px var(--shadow);
 }
 textarea {
+	background: var(--bg-dark);
+	border-radius: var(--pad-full);
 	box-shadow: 0px 0px 2px 1px var(--shadow) inset;
-	font: 100% var(--font-mono);
+/*	font: 100% var(--font-mono); */
+	margin: var(--pad-quarter-neg) 0px var(--pad-half) 0px;
+	padding: var(--pad-quarter) var(--pad-half);
 }
 u {
 	text-decoration: underline;
@@ -190,6 +198,12 @@ u {
 .pad-full {
 	padding: var(--pad-full) !important;
 }
+.pad-half {
+	padding: var(--pad-half) !important;
+}
+.pad-quarter {
+	padding: var(--pad-quarter) !important;
+}
 
 /*   M A R G I N S   */
 .mar-none {
@@ -216,22 +230,28 @@ u {
 .mar-full {
 	margin: var(--pad-full) !important;
 }
+.mar-half {
+	margin: var(--pad-half) !important;
+}
+.mar-quarter {
+	margin: var(--pad-quarter) !important;
+}
 
 /*   C A R D S   */
 .card {
 	background: var(--bg-default);
 	border-radius: var(--pad-full);
 	box-shadow: 0px 0px 2px 1px var(--shadow);
-	padding: var(--pad-half) var(--pad-full);
+	margin: 2px;
+	overflow: hidden !important;
+	padding: var(--pad-quarter) var(--pad-half);
 }
 .card img {
 	box-shadow: 0px 0px 2px 1px var(--shadow);
-	border-radius: 0px;
 	margin: 2px;
 }
 .card canvas {
 	box-shadow: 0px 0px 2px 1px var(--shadow);
-	border-radius: 0px;
 	margin: 2px;
 }
 .card h2 {
