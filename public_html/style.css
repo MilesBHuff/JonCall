@@ -1,24 +1,54 @@
 /*   V A R I A B L E S   */
 *:root {
-	--bg-default: #FFF;
-	--bg-dark:	  #EEE;
-	--bg-link:	  #9CF;
-	--bg-visited: #C9F;
-	--fg-default: #444;
-	--fg-link:	  #369;
-	--fg-visited: #639;
+	/* Basic colours */
+	--light-white:     #FFF;
+	--light-black:     #EEE;
+	--light-red:       #F99;
+	--light-orange:    #FC9;
+	--light-yellow:    #FF9;
+	--light-puce:      #CF9;
+	--light-green:     #9F9;
+	--light-turquoise: #9FC;
+	--light-cyan:      #9FF;
+	--light-azure:     #9CF;
+	--light-blue:      #99F;
+	--light-violet:    #C9F;
+	--light-magenta:   #F9F;
+	--light-fuchsia:   #F9C;
+	--dark-white:      #666;
+	--dark-black:      #444;
+	--dark-red:        #933;
+	--dark-orange:     #963;
+	--dark-yellow:     #993;
+	--dark-puce:       #693;
+	--dark-green:      #393;
+	--dark-turquoise:  #396;
+	--dark-cyan:       #399;
+	--dark-azure:      #369;
+	--dark-blue:       #339;
+	--dark-violet:     #639;
+	--dark-magenta:    #939;
+	--dark-fuchsia:    #936;
+	/* Other variables */
+	--bg-default: var(--light-white);
+	--bg-shade:	  var(--light-black);
+	--bg-link:	  var(--light-azure);
+	--bg-visited: var(--light-violet);
+	--fg-default: var(--dark-black);
+	--fg-link:	  var(--dark-azure);
+	--fg-visited: var(--dark-violet);
 	--font-sans:  sans-serif;
 	--font-serif: serif;
 	--font-mono:  monospace;
-	--indent:	   2em;
-	--line-height: 1.5;
-	--pad-double:  2em;
+	--indent:	        2em;
+	--line-height:      1.5;
+	--pad-double:       2em;
 	--pad-double-neg:  -2em;
-	--pad-full:    1em;
+	--pad-full:         1em;
 	--pad-full-neg:    -1em;
-	--pad-half:	   0.5em;
+	--pad-half:	        0.5em;
 	--pad-half-neg:	   -0.5em;
-	--pad-quarter: 0.25em;
+	--pad-quarter:      0.25em;
 	--pad-quarter-neg: -0.25em;
 	--shadow:	 #0004;
 }
@@ -74,7 +104,7 @@ b {
 	font-weight: bold;
 }
 body {
-	background: var(--bg-dark);
+	background: var(--bg-shade);
 	bottom: 0;
 	box-shadow: 0px 0px 4px 3px var(--shadow) inset;
 	left: 0;
@@ -120,7 +150,7 @@ i {
 	font-style: italic;
 }
 input {
-	background: var(--bg-dark);
+	background: var(--bg-shade);
 	border-radius: var(--pad-full);
 	box-shadow: 0px 0px 2px 1px var(--shadow) inset;
 	margin: var(--pad-quarter-neg) 0px var(--pad-half) 0px;
@@ -136,7 +166,7 @@ small {
 	font-size: 75%;
 }
 textarea {
-	background: var(--bg-dark);
+	background: var(--bg-shade);
 	border-radius: var(--pad-full);
 	box-shadow: 0px 0px 2px 1px var(--shadow) inset;
 /*	font: 100% var(--font-mono); */

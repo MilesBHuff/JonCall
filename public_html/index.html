@@ -11,13 +11,13 @@
 			<h1 class=card>JonCall</h1>
 			<form class="card grid" id=frmEntry>
 				<h2                     style="grid-area:1/1/span 1/span 2">Add new entry</h2>
-				<small class=mar-bottom style="grid-area:2/1/span 1/span 2;color:red">'*' indicates required fields.</small>
-				<label    form=frmEntry style="grid-area:3/1;text-align:right"           for=txtFullName>Name:&nbsp;</label>
-				<input    form=frmEntry style="grid-area:3/2" type=text name=fullname     id=txtFullName placeholder="…" autofocus>
-				<label    form=frmEntry style="grid-area:4/1;text-align:right;color:red" for=txtPhone>*Phone:&nbsp;</label>
-				<input    form=frmEntry style="grid-area:4/2" type=tel  name=phone        id=txtPhone    placeholder="X-XXX-XXX-XXXX" required>
-				<label    form=frmEntry style="grid-area:5/1;text-align:right"           for=txtReason>Reason:&nbsp;</label>
-				<textarea form=frmEntry style="grid-area:5/2" type=text name=description  id=txtReason   placeholder="…"></textarea>
+				<small class=mar-bottom style="grid-area:2/1/span 1/span 2;color:var(--dark-red)">'*' indicates required fields.</small>
+				<label    form=frmEntry style="grid-area:3/1;text-align:right"          for=txtFullName>Name:&nbsp;</label>
+				<input    form=frmEntry style="grid-area:3/2" type=text name=fullname    id=txtFullName placeholder="…" autofocus>
+				<label    form=frmEntry style="grid-area:4/1;text-align:right"          for=txtPhone><span style=color:var(--dark-red)>*Phone</span>:&nbsp;</label>
+				<input    form=frmEntry style="grid-area:4/2" type=tel  name=phone       id=txtPhone    placeholder="X-XXX-XXX-XXXX" required>
+				<label    form=frmEntry style="grid-area:5/1;text-align:right"          for=txtReason>Reason:&nbsp;</label>
+				<textarea form=frmEntry style="grid-area:5/2" type=text name=description id=txtReason   placeholder="…"></textarea>
 				<div                    style="grid-area:6/1/span 1/span 2">
 					<input form=frmEntry class=button type=submit name=submit value=Submit>
 					<input form=frmEntry class=button type=reset  name=reset  value=Reset>
