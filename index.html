@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang=en-us>
+
 	<head>
 		<meta http-equiv=Content-Type content=text/html; charset=UTF-8>
 		<meta       name=viewport     content="width=device-width, initial-scale=1.0">
@@ -8,15 +9,16 @@
 		<link rel=stylesheet type=text/css        href=style.css>
 		<script              type=text/javascript  src=script.js></script>
 	</head>
+
 	<body onload=main()>
 		<div class="grid gap-half pad-full" style=background:var(--light-black)0>
-<!-- ----------------------------------------------------------------------- -->
+
 			<h1 class=card style=grid-area:1/1>JonCall<span style=float:right;font-size:initial>
 				<button tabindex=1 style=margin-bottom:0px onclick=btnDownload()>Download&nbsp;.csv</button>
 				<button tabindex=2 style=margin-bottom:0px onclick=btnView()>View</button>
 				<button tabindex=3 style=margin-bottom:0px onclick=btnEdit()>Edit</button>
 			</span></h1>
-<!-- ----------------------------------------------------------------------- -->
+
 			<form class="card grid gap-half" id=frmEntry style=grid-area:2/1;display:none>
 				<h2                     style="grid-area:1/1/span 1/span 2">Add&nbsp;new&nbsp;entry</h2>
 				<small                  style="grid-area:2/1/span 1/span 2;color:var(--dark-red);margin-top:var(--pad-half-neg)">'*'&nbsp;indicates&nbsp;required&nbsp;fields.</small>
@@ -31,7 +33,7 @@
 					<input form=frmEntry tabindex=8 class=button type=reset  name=reset  value=Reset>
 				</div>
 			</form>
-<!-- ----------------------------------------------------------------------- -->
+
 			<form class="card grid gap-half" id=frmUpload style=grid-area:3/1;display:none>
 				<h2                   style="grid-area:1/1/span 1/span 3">Merge&nbsp;.csv</h2>
 				<small                style="grid-area:2/1/span 1/span 3;color:var(--dark-red);margin-top:var(--pad-half-neg)">'*'&nbsp;indicates&nbsp;required&nbsp;fields.</small>
@@ -48,7 +50,7 @@
 					<input form=frmUpload tabindex=15 class=button type=reset  name=frmupload>
 				</div>
 			</form>
-<!-- ----------------------------------------------------------------------- -->
+
 			<div class=card id=divNotCalled style=grid-area:2/1;display:inline-grid>
 				<h2 id=titNotCalled>Yet&#x2011;to&#x2011;call</h2>
 				<div class="grid shadow" style=margin-bottom:var(--pad-quarter) id=notCalled>
@@ -62,7 +64,7 @@
 					<span class=td style=grid-area:2/4>This&nbsp;will&nbsp;be&nbsp;replaced&nbsp;by&nbsp;actual&nbsp;data.</span>
 				</div>
 			</div>
-<!-- ----------------------------------------------------------------------- -->
+
 			<div class=card id=divYesCalled style=grid-area:3/1;display:inline-grid>
 				<h2 id=titYesCalled>Already&nbsp;called</h2>
 				<div class="grid shadow" style=margin-bottom:var(--pad-quarter) id=yesCalled>
@@ -76,6 +78,8 @@
 					<span class=td style=grid-area:2/4>This&nbsp;will&nbsp;be&nbsp;replaced&nbsp;by&nbsp;actual&nbsp;data.</span>
 				</div>
 			</div>
+
 		</div>
 	</body>
+
 </html>
