@@ -38,10 +38,15 @@
 				<input form=frmUpload style="grid-area:3/2" type=file name=uploadcsv id=filCsv accept=text/csv required>
 				<label form=frmUpload style="grid-area:4/1;text-align:right;color:var(--dark-red)"           >*Target:</label>
 				<div                  style="grid-area:4/2/span 1/span 2">
-					<input form=frmUpload style=grid-area:1/1;margin:var(--pad-quarter) type=radio name=targetcsv id=optNotCalled required value="Yet&#x2011;to&#x2011;call">Yet&#x2011;to&#x2011;call
-					<input form=frmUpload style=grid-area:1/2;margin:var(--pad-quarter) type=radio name=targetcsv id=optYesCalled required value="Already&nbsp;called">Already&nbsp;called
+					<input form=frmUpload style=grid-area:1/1;margin:var(--pad-quarter) type=radio name=csvtarget id=optNotCalled required value="Yet&#x2011;to&#x2011;call">Yet&#x2011;to&#x2011;call
+					<input form=frmUpload style=grid-area:1/2;margin:var(--pad-quarter) type=radio name=csvtarget id=optYesCalled required value="Already&nbsp;called">Already&nbsp;called
 				</div>
-				<div                  style="grid-area:5/1/span 1/span 2">
+				<label form=frmUpload style="grid-area:5/1;text-align:right;color:var(--dark-red)"           >*Action:</label>
+				<div                  style="grid-area:5/2/span 1/span 2">
+					<input form=frmUpload style=grid-area:1/1;margin:var(--pad-quarter) type=radio name=csvaction id=optMerge     required value=Merge checked>Merge
+					<input form=frmUpload style=grid-area:1/2;margin:var(--pad-quarter) type=radio name=csvaction id=optOverwrite required value=Overwrite>Overwrite
+				</div>
+				<div                  style="grid-area:6/1/span 1/span 2">
 					<input form=frmUpload class=button type=submit name=submit value=Submit>
 					<input form=frmUpload class=button type=reset  name=reset  value=Reset>
 				</div>
