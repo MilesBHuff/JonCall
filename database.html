@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang=en-us>
+
+	<head>
+		<meta http-equiv=Content-Type content=text/html; charset=UTF-8>
+		<meta       name=viewport     content="width=device-width, initial-scale=1.0">
+		<title>JonCall</title>
+		<link rel=icon       type=image/x-icon    href=favicon.ico>
+		<link rel=stylesheet type=text/css        href=style.css>
+		<script              type=text/javascript  src=database.js></script>
+	</head>
+
+	<body onload=main()>
+		<div class="grid gap-half pad-full" style=background:var(--light-black)0>
+
+			<h1 class=card style=grid-area:1/1>JonCall<span style=float:right;font-size:initial>
+				<button tabindex=1 style=margin-bottom:0px onclick=btnDownload()>Download&nbsp;.csv</button>
+				<button tabindex=2 style=margin-bottom:0px onclick=btnView()>View</button>
+				<button tabindex=3 style=margin-bottom:0px onclick=btnEdit()>Edit</button>
+			</span></h1>
+
+			<form class="card grid gap-half" id=frmEntry style=grid-area:2/1;display:none>
+				<h2                     style="grid-area:1/1/span 1/span 2">Add&nbsp;new&nbsp;entry</h2>
+				<small                  style="grid-area:2/1/span 1/span 2;color:var(--dark-red);margin-top:var(--pad-half-neg)">'*'&nbsp;indicates&nbsp;required&nbsp;fields.</small>
+				<label    form=frmEntry style="grid-area:3/1;text-align:right"          for=txtFullName>Name:</label>
+				<input    form=frmEntry style="grid-area:3/2" type=text name=fullname    id=txtFullName tabindex=4 placeholder="…" autofocus>
+				<label    form=frmEntry style="grid-area:4/1;text-align:right"          for=txtPhone><span style=color:var(--dark-red)>*Phone:</span></label>
+				<input    form=frmEntry style="grid-area:4/2" type=tel  name=phone       id=txtPhone    tabindex=5 placeholder="X-XXX-XXX-XXXX" required>
+				<label    form=frmEntry style="grid-area:5/1;text-align:right"          for=txtReason>Reason:</label>
+				<textarea form=frmEntry style="grid-area:5/2" type=text name=description id=txtReason   tabindex=6 placeholder="…"></textarea>
+				<div                    style="grid-area:6/1/span 1/span 2">
+					<input form=frmEntry tabindex=7 class=button type=submit name=submit value=Submit formmethod=post formenctype=multipart/form-data>
+					<input form=frmEntry tabindex=8 class=button type=reset  name=reset  value=Reset>
+				</div>
+			</form>
+
+			<form class="card grid gap-half" id=frmUpload style=grid-area:3/1;display:none>
+				<h2                   style="grid-area:1/1/span 1/span 3">Merge&nbsp;.csv</h2>
+				<small                style="grid-area:2/1/span 1/span 3;color:var(--dark-red);margin-top:var(--pad-half-neg)">'*'&nbsp;indicates&nbsp;required&nbsp;fields.</small>
+				<label form=frmUpload style="grid-area:3/1;text-align:right;color:var(--dark-red)" for=filCsv>*File:</label>
+				<input form=frmUpload style="grid-area:3/2/span 1/span 2" type=file name=uploadcsv id=filCsv accept=text/csv tabindex=9  required>
+				<label form=frmUpload style="grid-area:4/1;text-align:right;color:var(--dark-red)"           >*Target:</label>
+				<span                 style="grid-area:4/2"><input form=frmUpload style=margin:var(--pad-quarter) type=radio tabindex=10 name=csvtarget id=optNotCalled required value="Yet&#x2011;to&#x2011;call">Yet&#x2011;to&#x2011;call</span>
+				<span                 style="grid-area:4/3"><input form=frmUpload style=margin:var(--pad-quarter) type=radio tabindex=11 name=csvtarget id=optYesCalled required value="Already&nbsp;called">Already&nbsp;called</span>
+				<label form=frmUpload style="grid-area:5/1;text-align:right;color:var(--dark-red)"           >*Action:</label>
+				<span                 style="grid-area:5/2"><input form=frmUpload style=margin:var(--pad-quarter) type=radio tabindex=12 name=csvaction id=optMerge     required value=Merge checked>Merge</span>
+				<span                 style="grid-area:5/3"><input form=frmUpload style=margin:var(--pad-quarter) type=radio tabindex=13 name=csvaction id=optOverwrite required value=Overwrite>Overwrite</span>
+				<div                  style="grid-area:6/1/span 1/span 3">
+					<input form=frmUpload tabindex=14 class=button type=submit name=frmupload formmethod=post formenctype=multipart/form-data>
+					<input form=frmUpload tabindex=15 class=button type=reset  name=frmupload>
+				</div>
+			</form>
+
+			<div class=card id=divNotCalled style=grid-area:2/1;display:inline-grid>
+				<h2 id=titNotCalled>Yet&#x2011;to&#x2011;call</h2>
+				<div class="grid shadow" style=margin-bottom:var(--pad-quarter) id=notCalled>
+					<span class=th style=grid-area:1/1>Date</span>
+					<span class=th style=grid-area:1/2>Name</span>
+					<span class=th style=grid-area:1/3>Phone</span>
+					<span class=th style=grid-area:1/4>Reason</span>
+					<span class=td style=grid-area:2/1>1970&#x2011;01&#x2011;01T00:00:00Z</span>
+					<span class=td style=grid-area:2/2>Dummy&nbsp;McDumdum</span>
+					<span class=td style=grid-area:2/3><a>5&#x2011;555&#x2011;555&#x2011;5555</a></span>
+					<span class=td style=grid-area:2/4>This&nbsp;will&nbsp;be&nbsp;replaced&nbsp;by&nbsp;actual&nbsp;data.</span>
+				</div>
+			</div>
+
+			<div class=card id=divYesCalled style=grid-area:3/1;display:inline-grid>
+				<h2 id=titYesCalled>Already&nbsp;called</h2>
+				<div class="grid shadow" style=margin-bottom:var(--pad-quarter) id=yesCalled>
+					<span class=th style=grid-area:1/1>Date</span>
+					<span class=th style=grid-area:1/2>Name</span>
+					<span class=th style=grid-area:1/3>Phone</span>
+					<span class=th style=grid-area:1/4>Reason</span>
+					<span class=td style=grid-area:2/1>1970&#x2011;01&#x2011;01T00:00:00Z</span>
+					<span class=td style=grid-area:2/2>Dummy&nbsp;McDumdum</span>
+					<span class=td style=grid-area:2/3><a>5&#x2011;555&#x2011;555&#x2011;5555</a></span>
+					<span class=td style=grid-area:2/4>This&nbsp;will&nbsp;be&nbsp;replaced&nbsp;by&nbsp;actual&nbsp;data.</span>
+				</div>
+			</div>
+
+		</div>
+	</body>
+
+</html>
