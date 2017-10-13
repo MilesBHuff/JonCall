@@ -1,6 +1,11 @@
 // script.js
 // #############################################################################
 
+// Global variables
+// ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+var params;
+var url;
+
 // GUI functions
 // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -15,6 +20,10 @@ function btnDownload() {
 // =============================================================================
 /** Hides the tables and shows the edit forms. **/
 function btnEdit() {
+	if(params.get("edit") != 1) {
+		params.set("edit", 1);
+		location.replace(url);
+	} //fi
 	document.getElementById("divNotCalled").style.display = "none";
 	document.getElementById("divYesCalled").style.display = "none";
 	document.getElementById("frmEntry"    ).style.display = "inline-grid";
@@ -25,6 +34,10 @@ function btnEdit() {
 // =============================================================================
 /** Hides the edit forms and shows the tables. **/
 function btnView() {
+	if(params.get("edit") != 0) {
+		params.set("edit", 0);
+		location.replace(url);
+	} //fi
 	document.getElementById("frmEntry"    ).style.display = "none";
 	document.getElementById("frmUpload"   ).style.display = "none";
 	document.getElementById("divNotCalled").style.display = "inline-grid";
@@ -35,5 +48,17 @@ function btnView() {
 // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 /** The main function. **/
 function main() {
-	//TODO
+
+	// Set variables
+	// =========================================================================
+	url    = new URL(window.location.href);
+	params = url.searchParams;
+
+	// Show the edit screen if specified in the URL
+	// =========================================================================
+	if(params.get("edit") > 0) {
+		btnEdit();
+	} else {
+		btnView();
+	} //fi
 } //function
