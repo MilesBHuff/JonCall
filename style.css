@@ -2,7 +2,7 @@
 *:root {
 	/* Basic colours */
 	--light-white:     #FFF;
-	--light-black:     #EEE;
+	--light-black:     #DDD;
 	--light-red:       #F99;
 	--light-orange:    #FC9;
 	--light-yellow:    #FF9;
@@ -77,7 +77,7 @@
 
 /*   E L E M E N T S   */
 a {
-	text-decoration: none;
+	color: var(--fg-link);
 }
 a:link {
 	color: var(--fg-link);
@@ -181,15 +181,15 @@ u {
 .grid {
   display: inline-grid;
 }
-.spreadsheet {
-}
-.spreadsheet th {
+.spreadsheet th, .th {
 	background: var(--fg-default);
 	border: 1px solid var(--fg-default);
 	color: var(--bg-default);
+	padding: var(--pad-quarter);
 }
-.spreadsheet td {
+.spreadsheet td, .td {
 	border: 1px solid var(--fg-default);
+	padding: var(--pad-quarter);
 }
 
 /*   G A P P I N G   */
@@ -349,4 +349,8 @@ u {
 }
 .serif {
 	font-family: var(--font-serif) !important;
+}
+.shadow {
+	box-shadow: 0px 0px var(--shadow-width) calc(var(--shadow-width) / 2) var(--shadow-color);
+	margin: var(--shadow-width);
 }
