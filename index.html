@@ -10,8 +10,9 @@
 	<body onload=main()>
 		<div class="grid gap-half pad-full">
 			<h1 class=card>JonCall<span style=float:right;font-size:initial>
-				<button style=margin-bottom:0px>View</button>
-				<button style=margin-bottom:0px>Edit</button>
+				<button style=margin-bottom:0px onclick=btnDownload()>Download</button>
+				<button style=margin-bottom:0px onclick=btnView()>View</button>
+				<button style=margin-bottom:0px onclick=btnEdit()>Edit</button>
 			</span></h1>
 			<form class="card grid gap-half" id=frmEntry>
 				<h2                     style="grid-area:1/1/span 1/span 2">Add new entry</h2>
