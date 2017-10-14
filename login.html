@@ -19,23 +19,30 @@
 			</span></h1>
 
 			<form class="card grid gap-half" id=frmLogin style=grid-area:2/1;display:inline-grid>
-				<h2                     style="grid-area:1/1/span 1/span 2">Login</h2>
-				<small                  style="grid-area:2/1/span 1/span 2;color:var(--dark-red);margin-top:var(--pad-half-neg)">'*'&nbsp;indicates&nbsp;required&nbsp;fields.</small>
-				<label    form=frmLogin style="grid-area:3/1;text-align:right;color:var(--dark-red)" for=txtUserName>*Username:</label>
-				<input    form=frmLogin style="grid-area:3/2" type=text name=username tabindex=3      id=txtUserName placeholder="…" autofocus>
-				<label    form=frmLogin style="grid-area:4/1;text-align:right;color:var(--dark-red)" for=txtPassword>*Password:</label>
-				<input    form=frmLogin style="grid-area:4/2" type=pass name=password tabindex=4      id=txtPassword placeholder="…" required>
-				<div                    style="grid-area:6/1/span 1/span 2">
+				<h2                  style="grid-area:1/1/span 1/span 2">Login</h2>
+				<small               style="grid-area:2/1/span 1/span 2;color:var(--dark-red);margin-top:var(--pad-half-neg)">'*'&nbsp;indicates&nbsp;required&nbsp;fields.</small>
+				<label form=frmLogin style="grid-area:3/1;text-align:right;color:var(--dark-red)" for=txtInUser>*Username:</label>
+				<input form=frmLogin style="grid-area:3/2" type=text     name=username tabindex=3  id=txtInUser placeholder="…" autofocus>
+				<label form=frmLogin style="grid-area:4/1;text-align:right;color:var(--dark-red)" for=txtInPass>*Password:</label>
+				<input form=frmLogin style="grid-area:4/2" type=password name=password tabindex=4  id=txtInPass placeholder="…" required>
+				<div                 style="grid-area:5/1/span 1/span 2">
 					<input form=frmLogin tabindex=5 class=button type=submit name=submit value=Submit formmethod=post formenctype=multipart/form-data>
 					<input form=frmLogin tabindex=6 class=button type=reset  name=reset  value=Reset>
 				</div>
 			</form>
 
 			<form class="card grid gap-half" id=frmSignup style=grid-area:2/1;display:none>
-				<h2                     style="grid-area:1/1/span 1/span 2">Signup</h2>
-				<div                    style="grid-area:2/1/span 1/span 2">
-					<input form=frmSignup tabindex=7 class=button type=submit name=submit value=Submit formmethod=post formenctype=multipart/form-data>
-					<input form=frmSignup tabindex=8 class=button type=reset  name=reset  value=Reset>
+				<h2                   style="grid-area:1/1/span 1/span 2">Signup</h2>
+				<small                style="grid-area:2/1/span 1/span 2;color:var(--dark-red);margin-top:var(--pad-half-neg)">'*'&nbsp;indicates&nbsp;required&nbsp;fields.</small>
+				<label form=frmSignup style="grid-area:3/1;text-align:right;color:var(--dark-red)" for=txtUpUser>*Username:</label>
+				<input form=frmSignup style="grid-area:3/2" type=text     name=username tabindex=7  id=txtUpUser placeholder="…" autofocus>
+				<label form=frmSignup style="grid-area:4/1;text-align:right;color:var(--dark-red)" for=txtUpPass>*Password:</label>
+				<input form=frmSignup style="grid-area:4/2" type=password name=password tabindex=8  id=txtUpPass placeholder="…" required>
+				<label form=frmSignup style="grid-area:5/1;text-align:right;color:var(--dark-red)" for=txtUpConf>*Confirm:</label>
+				<input form=frmSignup style="grid-area:5/2" type=password name=confirm  tabindex=9  id=txtUpConf placeholder="…" required>
+				<div                  style="grid-area:6/1/span 1/span 2">
+					<input form=frmSignup tabindex=10 class=button type=submit name=submit value=Submit formmethod=post formenctype=multipart/form-data>
+					<input form=frmSignup tabindex=11 class=button type=reset  name=reset  value=Reset>
 				</div>
 			</form>
 
