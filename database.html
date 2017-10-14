@@ -20,7 +20,7 @@
 				<button tabindex=3 style=margin-bottom:0px              onclick=btnEdit() id=btnEdit>Edit</button>
 			</span></h1>
 
-			<form class="card grid gap-half" id=frmEntry style=grid-area:2/1;display:none>
+			<form class="card grid gap-half" id=frmEntry method=post enctype=multipart/form-data action=entry.php style=grid-area:2/1;display:none>
 				<h2                     style="grid-area:1/1/span 1/span 2">Add&nbsp;new&nbsp;entry</h2>
 				<small                  style="grid-area:2/1/span 1/span 2;color:var(--dark-red);margin-top:var(--pad-half-neg)">'*'&nbsp;indicates&nbsp;required&nbsp;fields.</small>
 				<label    form=frmEntry style="grid-area:3/1;text-align:right"          for=txtFullName>Name:</label>
@@ -36,7 +36,7 @@
 				</div>
 			</form>
 
-			<form class="card grid gap-half" id=frmUpload style=grid-area:3/1;display:none>
+			<form class="card grid gap-half" id=frmUpload method=post enctype=multipart/form-data action=upload.php style=grid-area:3/1;display:none>
 				<h2                   style="grid-area:1/1/span 1/span 3">Merge&nbsp;.csv</h2>
 				<small                style="grid-area:2/1/span 1/span 3;color:var(--dark-red);margin-top:var(--pad-half-neg)">'*'&nbsp;indicates&nbsp;required&nbsp;fields.</small>
 				<label form=frmUpload style="grid-area:3/1;text-align:right;color:var(--dark-red)" for=filCsv>*File:</label>
