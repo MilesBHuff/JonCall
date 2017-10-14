@@ -4,7 +4,7 @@
 	<head>
 		<meta http-equiv=Content-Type content=text/html; charset=UTF-8>
 		<meta       name=viewport     content="width=device-width, initial-scale=1.0">
-		<title>JonCall - Login</title>
+		<title>JonCall</title>
 		<link rel=icon       type=image/x-icon    href=favicon.ico>
 		<link rel=stylesheet type=text/css        href=style.css>
 		<script              type=text/javascript  src=login.js></script>
@@ -13,18 +13,29 @@
 	<body onload=main()>
 		<center class=webkit-compat><div class="webkit-compat grid gap-half mar-full">
 
-			<h1 class=card style=grid-area:1/1>JonCall</h1>
+			<h1 class=card style=grid-area:1/1>JonCall<span style=float:right;font-size:initial>
+				<button tabindex=1 style=margin-bottom:0px;display:none onclick=btnLogin()  id=btnLogin>Login</button>
+				<button tabindex=2 style=margin-bottom:0px              onclick=btnSignup() id=btnSignup>Signup</button>
+			</span></h1>
 
-			<form class="card grid gap-half" id=frmLogin style=grid-area:2/1>
+			<form class="card grid gap-half" id=frmLogin style=grid-area:2/1;display:inline-grid>
 				<h2                     style="grid-area:1/1/span 1/span 2">Login</h2>
 				<small                  style="grid-area:2/1/span 1/span 2;color:var(--dark-red);margin-top:var(--pad-half-neg)">'*'&nbsp;indicates&nbsp;required&nbsp;fields.</small>
 				<label    form=frmLogin style="grid-area:3/1;text-align:right;color:var(--dark-red)" for=txtUserName>*Username:</label>
-				<input    form=frmLogin style="grid-area:3/2" type=text name=username tabindex=4      id=txtUserName placeholder="…" autofocus>
+				<input    form=frmLogin style="grid-area:3/2" type=text name=username tabindex=3      id=txtUserName placeholder="…" autofocus>
 				<label    form=frmLogin style="grid-area:4/1;text-align:right;color:var(--dark-red)" for=txtPassword>*Password:</label>
-				<input    form=frmLogin style="grid-area:4/2" type=pass name=password tabindex=5      id=txtPassword placeholder="…" required>
+				<input    form=frmLogin style="grid-area:4/2" type=pass name=password tabindex=4      id=txtPassword placeholder="…" required>
 				<div                    style="grid-area:6/1/span 1/span 2">
-					<input form=frmLogin tabindex=7 class=button type=submit name=submit value=Submit formmethod=post formenctype=multipart/form-data>
-					<input form=frmLogin tabindex=8 class=button type=reset  name=reset  value=Reset>
+					<input form=frmLogin tabindex=5 class=button type=submit name=submit value=Submit formmethod=post formenctype=multipart/form-data>
+					<input form=frmLogin tabindex=6 class=button type=reset  name=reset  value=Reset>
+				</div>
+			</form>
+
+			<form class="card grid gap-half" id=frmSignup style=grid-area:2/1;display:none>
+				<h2                     style="grid-area:1/1/span 1/span 2">Signup</h2>
+				<div                    style="grid-area:2/1/span 1/span 2">
+					<input form=frmSignup tabindex=7 class=button type=submit name=submit value=Submit formmethod=post formenctype=multipart/form-data>
+					<input form=frmSignup tabindex=8 class=button type=reset  name=reset  value=Reset>
 				</div>
 			</form>
 
