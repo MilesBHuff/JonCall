@@ -1,4 +1,4 @@
-// script.js
+// database.js
 // #############################################################################
 
 // Global variables
@@ -29,6 +29,8 @@ function btnEdit() {
 	} //fi
 	document.getElementById("divNotCalled").style.display = "none";
 	document.getElementById("divYesCalled").style.display = "none";
+	document.getElementById("btnEdit"     ).style.display = "none";
+	document.getElementById("btnView"     ).style.display = "inline-grid";
 	document.getElementById("frmEntry"    ).style.display = "inline-grid";
 	document.getElementById("frmUpload"   ).style.display = "inline-grid";
 } //function
@@ -54,6 +56,8 @@ function btnView() {
 	} //fi
 	document.getElementById("frmEntry"    ).style.display = "none";
 	document.getElementById("frmUpload"   ).style.display = "none";
+	document.getElementById("btnView"     ).style.display = "none";
+	document.getElementById("btnEdit"     ).style.display = "inline-grid";
 	document.getElementById("divNotCalled").style.display = "inline-grid";
 	document.getElementById("divYesCalled").style.display = "inline-grid";
 } //function
